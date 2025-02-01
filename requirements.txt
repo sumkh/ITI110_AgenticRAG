@@ -1,0 +1,24 @@
+gradio
+langchain-groq
+
+# LangChain and related dependencies
+langchain
+langchain-core
+langchain-text-splitters
+langchain-community
+langgraph
+chromadb
+langchain-chroma
+langsmith
+
+# Document processing
+docling
+langchain-docling
+
+
+# Local LLM and other utilities
+llama-cpp-python
+langchain_huggingface
+sentence_transformers
+
+# Logging and typing support (in standard library for Python 3.9+)
