@@ -1,0 +1,51 @@
+Number,Question,Options,Answer
+1,You have an application that needs to perform full-text search on large datasets. Which Azure service should you use?,a. Azure SQL Database b. Azure AI Search c. Cosmos DB d. Azure Data Lake,b
+2,Which component of Azure AI Search is responsible for defining how documents are indexed?,a. Indexer b. Index c. Data Source d. Skillset,b
+3,Which Azure AI Search feature allows users to correct spelling mistakes in search queries?,a. Synonyms b. Suggesters c. Normalizers d. Query Spell Checker,d
+4,You need to include a cognitive skill that extracts people’s names from unstructured text. Which skill should you use?,a. OCR skill b. Entity Recognition skill c. Text Translation skill d. Sentiment Detection skill,b
+5,Which of the following is NOT a valid data source for Azure AI Search?,a. Azure SQL Database b. Cosmos DB c. Blob Storage d. Google Cloud Storage,d
+6,Which component of Azure AI Search allows you to apply AI-powered transformations on data before indexing?,a. Indexer b. Index c. Skillset d. Query Pipeline,c
+7,Which feature in Azure AI Search enables faceted navigation for search results?,a. Filters b. Projections c. Facets d. Sorting,c
+8,Which index field attribute allows partial matching in search queries?,a. Facetable b. Searchable c. Retrievable d. Filterable,b
+9,You need to integrate an AI enrichment pipeline in Azure AI Search. What is the first step?,a. Define an index b. Create a skillset c. Configure an indexer d. Create a data source,d
+10,Which Azure AI Search feature enables recommendations for search queries as users type?,a. Autocomplete b. Query Spell Checker c. Scoring Profiles d. Synonyms,a
+11,What is the purpose of scoring profiles in Azure AI Search?,a. To enhance relevance of search results b. To store user preferences c. To group search results by categories d. To apply query filters,a
+12,Which storage service is best suited for storing and indexing large amounts of unstructured data for Azure AI Search?,a. Azure Blob Storage b. Azure Table Storage c. Azure SQL Database d. Azure Data Lake,a
+13,Which indexer setting ensures that only modified data is reindexed?,a. Full Indexing b. Incremental Indexing c. Batch Indexing d. Real-time Indexing,b
+14,What is the primary advantage of using a skillset in Azure AI Search?,a. To improve search indexing by enriching data with AI b. To organize search results into categories c. To filter search results efficiently d. To optimize query execution,a
+15,Which type of search query in Azure AI Search allows for partial word matching?,a. Fuzzy Search b. Exact Match c. Wildcard Search d. Range Query,a
+16,Which Azure AI Search feature improves search result relevance by adjusting weights of fields?,a. Ranking Profiles b. Indexer c. Synonyms d. Data Sources,a
+17,What is the primary purpose of the suggesters feature in Azure AI Search?,a. To provide query suggestions as users type b. To rank search results c. To enable faceted search d. To apply AI enrichment,a
+18,Which query type in Azure AI Search allows for logical combinations of search terms?,a. Full-Text Search b. Fuzzy Search c. Boolean Query d. Synonym Matching,c
+19,Which indexing feature helps improve performance by reducing redundant indexing?,a. Incremental Indexing b. Batch Processing c. Full Reindexing d. AI Enrichment,a
+20,Which Azure AI Search feature helps correct user search queries dynamically?,a. Autocomplete b. Spell Checker c. Scoring Profiles d. Synonyms,b
+21,You are building a solution that uses Azure AI Search. You need to create a skillset definition. What are minimum sections you should include in the definition?,"a. name, description, and skills. b. name, description, knowledgeStore, and encryptionKey. c. name, description, skills, and cognitiveServices. d. name, description, skills, knowledgeStore, and encryptionKey.",a
+22,You have a web app named App1 that performs custom searches. You are building a solution that uses Azure AI Search. You need to include App1 as a custom skill as part of the solution. Which @odata.type should you use to call App1?,a. Microsoft.Skills.Custom.AmlSkill. b. ...,b
+23,Which component of Azure AI Search is responsible for defining how documents are indexed?,a. Indexer b. Index c. Data Source d. Skillset,b
+24,Which Azure AI Search feature allows users to correct spelling mistakes in search queries?,a. Synonyms b. Suggesters c. Normalizers d. Query Spell Checker,d
+25,You need to include a cognitive skill that extracts people’s names from unstructured text. Which skill should you use?,a. OCR skill b. Entity Recognition skill c. Text Translation skill d. Sentiment Detection skill,b
+26,Which of the following is NOT a valid data source for Azure AI Search?,a. Azure SQL Database b. Cosmos DB c. Blob Storage d. Google Cloud Storage,d
+27,Which component of Azure AI Search allows you to apply AI-powered transformations on data before indexing?,a. Indexer b. Index c. Skillset d. Query Pipeline,c
+28,Which feature in Azure AI Search enables faceted navigation for search results?,a. Filters b. Projections c. Facets d. Sorting,c
+29,Which index field attribute allows partial matching in search queries?,a. Facetable b. Searchable c. Retrievable d. Filterable,b
+30,You need to integrate an AI enrichment pipeline in Azure AI Search. What is the first step?,a. Define an index b. Create a skillset c. Configure an indexer d. Create a data source,d
+31,Which Azure AI Search feature enables recommendations for search queries as users type?,a. Autocomplete b. Query Spell Checker c. Scoring Profiles d. Synonyms,a
+32,What is the purpose of scoring profiles in Azure AI Search?,a. To enhance relevance of search results b. To store user preferences c. To group search results by categories d. To apply query filters,a
+33,Which storage service is best suited for storing and indexing large amounts of unstructured data for Azure AI Search?,a. Azure Blob Storage b. Azure Table Storage c. Azure SQL Database d. Azure Data Lake,a
+34,Which indexer setting ensures that only modified data is reindexed?,a. Full Indexing b. Incremental Indexing c. Batch Indexing d. Real-time Indexing,b
+35,Which language feature in Azure AI Search allows handling of multi-language search queries?,a. Tokenizers b. Analyzers c. Stemmers d. Lexicons,b
+36,You need to store AI-enriched output alongside the original data in Azure AI Search. Which feature should you use?,a. Indexer Cache b. Cognitive Search Knowledge Store c. Query Pipeline d. Enrichment Storage,b
+37,Which indexer scheduling option ensures that new data is indexed at regular intervals?,a. Manual Scheduling b. Real-time Scheduling c. Periodic Scheduling d. Event-Driven Scheduling,c
+38,Which API should be used to query an Azure AI Search index?,a. REST API b. SOAP API c. SQL Query API d. GraphQL API,a
+39,Which index field attribute determines if an indexed field can be returned in search results?,a. Searchable b. Filterable c. Retrievable d. Sortable,c
+40,Which Azure AI Search feature allows custom ranking of search results?,a. Scoring Profiles b. Ranking Models c. Query Filters d. Indexing Rules,a
+41,Which search query mode in Azure AI Search supports advanced Boolean expressions?,a. Simple b. Full c. Semantic d. Complex,b
+42,Which security feature ensures that Azure AI Search indexes are only accessible by authorized users?,a. Index Key Authentication b. API Gateway c. Azure RBAC d. OAuth,c
+43,Which Azure AI Search feature groups search results based on categories?,a. Facets b. Filters c. Query Expansion d. Query Classification,a
+44,Which component of Azure AI Search is responsible for retrieving search results?,a. Indexer b. Index c. Search Engine d. Query Processor,d
+45,Which field type in Azure AI Search stores multiple values for a single document?,a. Collection b. Array c. Multivalue d. Composite,a
+46,Which Azure AI Search feature ensures compliance with data privacy regulations?,a. Encryption-at-Rest b. API Logging c. Compliance Mode d. Security Profiles,a
+47,Which type of AI skill extracts text from images in Azure AI Search?,a. OCR Skill b. Entity Recognition Skill c. Translation Skill d. Key Phrase Extraction Skill,a
+48,Which Azure AI Search query operation boosts certain fields to rank results higher?,a. Weighting b. Boosting c. Elevation d. Prioritization,b
+49,Which feature allows users to filter search results dynamically?,a. Query Syntax b. Filters c. Scoring Profiles d. Search Analytics,b
+50,Which feature in Azure AI Search corrects typos in search queries automatically?,a. Query Expansion b. Synonyms c. Spell Checker d. Tokenization,c
