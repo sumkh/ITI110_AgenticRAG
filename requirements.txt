@@ -15,10 +15,20 @@ langsmith
 docling
 langchain-docling
 
-
 # Local LLM and other utilities
-llama-cpp-python
+#llama-cpp-python
 langchain_huggingface
+transformers 
 sentence_transformers
 
 # Logging and typing support (in standard library for Python 3.9+)
+
+torch 
+torchvision 
+torchaudio 
+transformers 
+accelerate
+
+outlines
+datasets
+sentencepiece
