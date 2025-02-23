@@ -1,0 +1,30 @@
+gradio
+requests
+#langchain-groq
+langchain-openai
+#torch
+#vllm
+#accelerate 
+#bitsandbytes
+
+# LangChain and related dependencies
+langchain
+langchain-core
+langchain-text-splitters
+langchain-community
+langgraph
+chromadb
+langchain-chroma
+#langsmith
+
+# Document processing
+docling
+langchain-docling
+
+# Local LLM and other utilities
+#llama-cpp-python
+langchain_huggingface
+transformers 
+sentence_transformers
+#huggingface_hub
+

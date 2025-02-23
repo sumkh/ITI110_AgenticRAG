@@ -1,5 +1,11 @@
 gradio
+requests
 langchain-groq
+langchain-openai
+torch
+vllm
+accelerate 
+bitsandbytes
 
 # LangChain and related dependencies
 langchain
@@ -16,19 +22,9 @@ docling
 langchain-docling
 
 # Local LLM and other utilities
-#llama-cpp-python
+llama-cpp-python
 langchain_huggingface
 transformers 
 sentence_transformers
+huggingface_hub
 
-# Logging and typing support (in standard library for Python 3.9+)
-
-torch 
-torchvision 
-torchaudio 
-transformers 
-accelerate
-
-outlines
-datasets
-sentencepiece
