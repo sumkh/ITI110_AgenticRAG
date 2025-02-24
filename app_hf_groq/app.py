@@ -2,7 +2,19 @@ from io import StringIO
 import sys
 
 import os
-from huggingface_hub import login
+# Set EasyOCR cache directory to a writable location
+os.environ["EASYOCR_CACHE_DIR"] = "/app/.EASYOCR"
+import easyocr
+# Monkey-patch the easyocr.Reader to force the model_storage directory parameter
+_original_init = easyocr.Reader.__init__
+def new_init(self, *args, **kwargs):
+    if args and "lang_list" in kwargs:
+        del kwargs["lang_list"]
+    kwargs.setdefault("model_storage_directory", "/app/.EasyOCR")
+    _original_init(self, *args, **kwargs)
+easyocr.Reader.__init__ = new_init
+
+#from huggingface_hub import login
 import gradio as gr
 import json
 import csv
@@ -31,7 +43,7 @@ from docling.chunking import HybridChunker
 from langchain_community.document_loaders import WebBaseLoader
 from urllib.parse import urlparse
 
-#from langchain_groq import ChatGroq
+from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
 from langgraph.prebuilt import InjectedStore
 from langgraph.store.base import BaseStore
@@ -56,15 +68,15 @@ logger = logging.getLogger(__name__)
 logging.disable(logging.WARNING)
 
 
-HF_TOKEN = os.getenv("HF_TOKEN")  # Read from environment variable
-if HF_TOKEN:
-    login(token=HF_TOKEN)  # Log in to Hugging Face Hub
-else:
-    print("Warning: HF_TOKEN not found in environment variables.")
+# HF_TOKEN = os.getenv("HF_TOKEN")  # Read from environment variable
+# if HF_TOKEN:
+#     login(token=HF_TOKEN)  # Log in to Hugging Face Hub
+# else:
+#     print("Warning: HF_TOKEN not found in environment variables.")
 
-# GROQ_API_KEY = os.getenv("GROQ_API_KEY")  # Read from environment variable
-# if not GROQ_API_KEY:
-#     print("Warning: GROQ_API_KEY not found in environment variables.")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")  # Read from environment variable
+if not GROQ_API_KEY:
+    print("Warning: GROQ_API_KEY not found in environment variables.")
 
 EMBED_MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"
 
@@ -542,21 +554,22 @@ ensemble_retriever_tool = StructuredTool.from_function(
 ###############################################################################
 
 TEMPERATURE = 0.5
-model = ChatOpenAI(
-    model="unsloth/llama-3-8b-Instruct-bnb-4bit",
-    temperature=TEMPERATURE,
-    timeout=None,
-    max_retries=2,
-    api_key="not_required",
-    base_url="http://localhost:8000/v1", # Use the VLLM instance URL
-)
-
-# model = ChatGroq(
-#     model_name="deepseek-r1-distill-llama-70b",
+# model = ChatOpenAI(
+#     model="unsloth/llama-3-8b-Instruct-bnb-4bit",
 #     temperature=TEMPERATURE,
-#     api_key=GROQ_API_KEY,
+#     timeout=None,
+#     max_retries=2,
+#     api_key="not_required",
+#     base_url="http://localhost:8000/v1", # Use the VLLM instance URL
 #     verbose=True
 # )
+
+model = ChatGroq(
+    model_name="deepseek-r1-distill-llama-70b",
+    temperature=TEMPERATURE,
+    api_key=GROQ_API_KEY,
+    verbose=True
+)
 
 ###############################################################################
 # 1. Initialize memory + config
@@ -982,7 +995,7 @@ def save_chat_history(history):
 ########################################
 # 6) Main Gradio Interface
 ########################################
-with gr.Blocks(theme="ocean") as AI_Tutor:
+with gr.Blocks() as AI_Tutor:
     gr.Markdown("# AI Tutor Chatbot (Gradio App)")
 
     # Primary Chat Interface
@@ -991,11 +1004,13 @@ with gr.Blocks(theme="ocean") as AI_Tutor:
         type="messages",
         chatbot=gr.Chatbot(
             label="Chat Window",
-            height=500
+            height=500,
+            type="messages"
         ),
         textbox=gr.MultimodalTextbox(
+            interactive=True,
             file_count="multiple",
-            file_types=None,
+            file_types=[".pdf",".ppt",".pptx",".doc",".docx",".md","image"],
             sources=["upload"],
             label="Type your query here:",
             placeholder="Enter your question...",
