@@ -1,12 +1,11 @@
 gradio
-huggingface_hub
 requests
-langchain-groq
+#langchain-groq
 langchain-openai
-#torch
-#vllm
-#accelerate 
-#bitsandbytes
+torch
+vllm
+accelerate 
+bitsandbytes
 
 # LangChain and related dependencies
 langchain
@@ -27,4 +26,5 @@ langchain-docling
 langchain_huggingface
 transformers 
 sentence_transformers
+huggingface_hub
 
