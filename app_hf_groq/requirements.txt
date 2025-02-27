@@ -28,4 +28,4 @@ easyocr
 langchain_huggingface
 transformers 
 sentence_transformers
-
+langgraph-prebuilt

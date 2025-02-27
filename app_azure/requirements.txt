@@ -27,4 +27,4 @@ langchain_huggingface
 transformers 
 sentence_transformers
 #huggingface_hub
-
+langgraph-prebuilt
