@@ -69,12 +69,3 @@ To set up and activate a virtual environment:
    ```bash
    pip install -r requirements.txt
    ```
-
-### Huggingface Spaces Applications
-
-**Based on GROQ API**:
-https://huggingface.co/spaces/Sumkh/Agentic_RAG_Groq
-
-**Based on Huggingface Pretrained Model**:
-https://huggingface.co/spaces/Sumkh/AgenticRAG
-
